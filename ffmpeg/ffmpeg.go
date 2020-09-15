@@ -31,8 +31,8 @@ func Configure() (Configuration, error) {
 		return Configuration{}, err
 	}
 
-	ffmpeg := strings.Replace(strings.Split(outFFmpeg.String(), "\n")[0], utils.LineSeparator(), "", -1)
-	ffprobe := strings.Replace(strings.Split(outProbe.String(), "\n")[0], utils.LineSeparator(), "", -1)
+	ffmpeg := strings.Replace(strings.Split(outFFmpeg.String(), utils.LineSeparator())[0], utils.LineSeparator(), "", -1)
+	ffprobe := strings.Replace(strings.Split(outProbe.String(), utils.LineSeparator())[0], utils.LineSeparator(), "", -1)
 
 	cnf := Configuration{ffmpeg, ffprobe}
 	return cnf, nil
